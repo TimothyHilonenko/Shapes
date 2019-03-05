@@ -14,4 +14,19 @@ public class RectangularTriangle extends Shape
     {
         return width * height / 2;
     }
+
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj instanceof RectangularTriangle)
+        {
+            return this.width == ((RectangularTriangle) obj).width  && this.height == ((RectangularTriangle) obj).height ||
+                    this.width == ((RectangularTriangle) obj).height && this.height == ((RectangularTriangle) obj).width;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

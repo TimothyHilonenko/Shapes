@@ -12,4 +12,20 @@ public class Circle extends Shape
     {
         return Math.pow(radius, 2) * Math.PI;
     }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj instanceof Circle)
+        {
+            return this.radius == ((Circle) obj).radius;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+
 }

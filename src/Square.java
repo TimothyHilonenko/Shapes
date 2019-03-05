@@ -11,5 +11,19 @@ public class Square extends Shape
     public double getArea()
     {
         return Math.pow(side, 2);
+
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj instanceof Square)
+        {
+            return this.side == ((Square) obj).side;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
