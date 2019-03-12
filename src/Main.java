@@ -20,7 +20,11 @@ public class Main
         System.out.println("5 s1 is equal to s2 (different side):" + s1.equals(s2));
 
         Rectangle r1 = new Rectangle(15.0, 20.0);
-        Rectangle r2 = new Rectangle(15.0, 20.0);
+        Rectangle r2 = new Rectangle(20.0, 15.0);
+
+        System.out.println("hashcode r1:" + r1.hashCode());
+        System.out.println("hashcode r2:" + r2.hashCode());
+
         System.out.println("6 r1 is equal to c1 (different shape):" + r1.equals(c1));
         System.out.println("7 r1 is equal to s1 (different shape):" + r1.equals(s1));
         System.out.println("8 r1 is equal to r1 (the same width and height):" + r1.equals(r1));
