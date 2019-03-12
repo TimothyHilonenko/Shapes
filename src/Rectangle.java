@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Rectangle extends Shape
 {
     double width = 0;
@@ -16,16 +18,29 @@ public class Rectangle extends Shape
     }
 
     @Override
-public boolean equals(Object obj)
-{
-    if (obj instanceof Rectangle)
+    public boolean equals(Object obj)
     {
-        return this.width == ((Rectangle) obj).width  && this.height == ((Rectangle) obj).height ||
-                this.width == ((Rectangle) obj).height && this.height == ((Rectangle) obj).width;
+        if (obj instanceof Rectangle)
+        {
+            return this.width == ((Rectangle) obj).width  && this.height == ((Rectangle) obj).height ||
+                    this.width == ((Rectangle) obj).height && this.height == ((Rectangle) obj).width;
+        }
+        else
+        {
+            return false;
+        }
     }
-    else
+
+    @Override
+    public int hashCode()
     {
-        return false;
+        if(width < height)
+        {
+            return Objects.hash(width, height);
+        }
+        else
+        {
+            return Objects.hash(height, width);
+        }
     }
-}
 }
